@@ -1,0 +1,75 @@
+Topic:Web Development
+Java script:
+•	Develop dynamic websites
+1)Static Websites:Remains same to everyone 
+Ex:facebook login
+2)Dynamic Websites:changes to everyone (data)
+Ex:Youtube, Google Maps
+Variables:
+1)Case sensitive(upper case letters are different from lower case letters)
+2)Start with letters , __ (under_score),$(Dollarsign)
+3)cannot start with numbers
+4)Reserved Words not allowed
+5)Allowed letters , __( under_score),$(Dollarsign) , numbers
+How to declare variables:
+Var
+Let
+Const
+1)Var:1995 to 2015(Old Version)
+2)let:2015
+Two types of languages:
+1)Static typed:need to declare data type
+2)Dynamic typed:need not to declare data type
+EX:variable.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let _a3 = "Amrutha";
+        console.log(_a3);
+    </script>
+</body>
+</html>
+Reassigning variables:
+1)it is 
+EX
+        var fav_std="ramya";
+        fav_std="kavya";
+        fav_std="sam";
+        document.write(fav_std);
+        console.log(fav_std);
+Output:sam
+Reassigning variables using numbers:
+        var a= 1;
+        a=5;
+        document.write(a+a);
+      console.log(a+a);
+1)Reassigning variables 
+2)Reassigning with let accepted
+3)Reassigning with const not accepted
+4)Readeclaring with var accepted
+EX: var a = 1;
+        var a = 5;
+        document.write(a+a);
+        console.log(a+a);
+Output:10
+5) Redeclaring with let is not accepted
+ let a = 1;
+        let a = 5;
+        document.write(a+a);
+        console.log(a+a);
+Output:Error
+6) Redeclaring with const is not accepted
+BLOCK SCOPE:
+Variables declared with var does not have block scope
+ var a= "sai"
+        {
+        var a = "kumar";
+        console.log(a);
+        }
+Output:sai
