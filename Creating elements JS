@@ -1,0 +1,75 @@
+--get element by id class ,tag
+--queryselector methods
+--to create a element by using JS
+1)single element
+2)Multiple element
+Ex:
+<script>
+        let title
+        for(let i =0;i<3;i++){
+            title=document.createElement("h1")
+            title.className="a"
+            title.textContent=title[i]
+            console.log(title)
+        }
+    </script>
+Output:
+<h1 class="a"></h1>
+<h1 class="a"></h1>
+<h1 class="a"></h1>
+To create a Multiple element:
+const titles=["Amrutha","Cherishma","Swathi"]
+        for(let i=0;i<titles,length;i++){
+            let titles=document.createElement('h1')
+            titles.className="a"
+            titles.textContent=titles[i]
+            console.log(titles)
+    }
+
+Removing a child element from a element from a parent node:
+<h1>Removing Child Nodes</h1>
+    <h2>I am Amrutha</h2>
+    <ul>
+        <li> Amrutha</li>
+        <li> Swathi</li>
+        <li> Cherishma</li>
+    </ul>
+    <script>
+        const ul=document.querySelector('ul')
+        const lists=document.querySelectorAll("li")
+        for(const list of lists){
+            console.log(`Removing : ${list.textContent}`)
+            ul.removeChild(list)
+        }
+    </script>
+Output:
+Removing :  Amrutha
+Removing :  Swathi
+Removing :  Cherishma
+To append a new element:
+Append()-to append a new element to parent
+<div id="a">
+        <h1>Amrutha</h1>
+        <h1>Swathi</h1>
+    </div>
+    <div id="b">
+        <h1>Chandu</h1>
+        <h2>Cherishma</h2>
+    </div>
+    <script>
+        let n=document.createElement("h2")
+        n.textContent="Cherishma is the Team Leader"
+        //get the Parent Element
+        let p=document.getElementById("b")
+        console.log(p.innertext)
+        //append the new element to the parent node
+        p.appendChild(n)
+        //log the inner Text of the parent
+        console.log(p)
+        console.log(p.innerText) 
+    </script>
+
+Output:
+Chandu
+Cherishma
+Cherishma is the Team Leader
