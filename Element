@@ -1,0 +1,93 @@
+1)create a new element (Single, Multiple)
+2)append an element inside the parent node
+Add the element at the end 
+3)InsertBefore(): insert a new node before an existing node on child node of a single parent node
+Ex:
+<div id="a">
+        <h1>Amrutha</h1>
+        <h1>Ram</h1>
+       </div> 
+       <div id="b">
+       <h2>sam</h2>
+        <h2>venkat</h2>
+       </div>
+        <script>
+            let n = document.createElement("h2")
+            n.textContent="Rahul"
+            let p = document.getElementById('a')
+            let i = document.getElementById('i')
+            p.insertBefore(n,i)
+            console.log(p)
+        </script>
+Output:
+Amrutha
+Ram
+Rahul
+sam
+venkat
+Ex:
+<div id="a">
+            <h1>Ravi</h1>
+            <h1 id ="r">Ram</h1>
+            
+           </div> 
+           <div id="b">
+           <h2>sam</h2>
+            <h2>venkat</h2>
+           </div>
+            <script>
+                let n = document.createElement("h1")
+                n.textContent="Rahul"
+                let a = document.getElementById('a')
+                let b = document.getElementById('r')
+                p.insertBefore(n,i)
+                console.log(p)
+            </script>
+Output:
+Ravi
+Ram
+sam
+venkat
+Ex:
+<div id="a">
+                <h1>Ravi</h1>
+                <h1 id ="r">Ram</h1>
+                
+               </div> 
+               <div id="b">
+               <h2>sam</h2>
+                <h2>venkat</h2>
+               </div>
+                <script>
+                    let n = document.createElement("h1")
+                    n.textContent="Pavani"
+                    let c = document.getElementById('a')
+                    let d = document.getElementById('r')
+                    p.insertBefore(n,i)
+                    console.log(p)
+                </script>
+Output:
+Ravi
+Ram
+Pavani
+sam
+venkat
+<div id="a">
+                <h1>Ravi</h1>
+                <h1 id ="r">Ram</h1>
+               </div> 
+               <div id="b">
+               <h2>sam</h2>
+                <h2>venkat</h2>
+               </div>
+                <script>
+                    let p=document.createElement("h1")
+                    p.innerText="Version"
+                    let n=document.getElementById("a")
+                    //replace all the element with thr 
+                    p.replaceChildren(a)
+                    console.log(p)
+                    </script>
+Output:
+Sam
+venkat
