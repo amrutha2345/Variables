@@ -1,0 +1,77 @@
+1st February 2025
+Variables:
+Let,var,const
+2)Operators:
+3)conditional Statements
+4)oops
+5Functions
+5)Promises
+1)Javascript
+2)React Js
+3)Projects-Frontend
+4)springboot
+5)Mysql
+6)Material UI
+You are tasked with building a system to check whether a person is eligible to vote. The system follows these rules:
+1.	A person must be at least 18 years old to vote
+2.	If the person is a citizen, they are eligible to vote.
+3.	If the person is not a citizen but has passed a citizenship test, they are eligible to vote.
+4.	If the person is under 18, they cannot vote.
+Voting eligible :
+<script>
+            let i=parseInt(prompt("Enter your age"));
+            let j=prompt("Do you have citizen ship? yes or no");
+            if(i<18){
+                console.log("You are not eligible for voting");
+            }
+            else if(i>=18 && j=="yes"){
+                console.log("You are eligible for voting");
+            
+            }
+            else if(i>=18 && j=="no"){
+                console.log("You are eligible for voting");
+            }
+            else{
+                console.log("Invalid input");
+            }
+    </script>
+Output:
+Enter your age:16
+Do you have citizenship? Yes or no:Yes
+You are not eligible for voting
+Scenario2: Discount Eligibility
+An online store offers a discount system based on the following conditions:
+1.	A customer who spends more than RS.100 gets a 20% discount.
+2.	A customer who spends more than RS.50 but less than or equal to RS.100 gets a 10% discount.
+3.	If the cutomer is a premium member, they receive a extra 5% discount.
+Discount Eligible:
+<script>
+            let amountSpent = prompt("enter the amount spent:");
+            let isPremiumMember = prompt("are you a premium member?");
+            amountSpent = parseFloat(amountSpent);
+            let discount = 0;
+            if (amountSpent > 100) {
+                discount = 20;
+            } else if (amountSpent > 50 && amountSpent <= 100) {
+                discount = 10;
+            }
+            if (isPremiumMember.toLowerCase() === "yes") {
+                discount += 5;
+            }
+            let finalAmount = amountSpent - (amountSpent * discount / 100);
+            document.write("Total discount: " + discount + "%<br>");
+            document.write("Final amount after discount: Rs." + finalAmount.toFixed(2));
+    </script>
+Output:
+Enter the Amount Spent:1000
+Are you a premium member:no
+Total discount: 20%
+Final amount after discount: Rs.800.00
+
+React js introduction:
+React  is a java script library for creating user interfaces.
+[ library: predefined code]
+A UI (user interface) is a point of interaction between user and a computer system, including elements like buttons, menus, and visual layouts that facilitates navigation and control.
+Its commonly used to build single page application.
+React Js :
+
