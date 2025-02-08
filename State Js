@@ -1,0 +1,13 @@
+08/02/2025
+State:
+In react,state is like a container that holds the data or information for a component.
+This data can be change over time based on user actions or events
+Why state is important in react:
+--it allows us the component to remember things.
+Ex: if you click a button to change a color; the state will store hold the color and show on the screen.
+1)	Fuctional components:
+   Syntax:
+Const[stateVariable,setstatefunction]=useState(initialvalue)
+1)statevariable: holds the current state(ex:name,color)
+2)setstatefunction: A function which is used to update the state
+3) initial Value: The initial value of a state variable when the component first renders.
