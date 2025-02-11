@@ -1,0 +1,139 @@
+11th February 2025
+React Assignment-1
+Scenario:1
+Dynamic greeting based on user input
+You have a react application where you need to display a personalised greeting message .The greeting message will be based on the user’s input.If the user is logged in .Show a message like”Welcome back” [user’s Name].if not show “Please log in” .Additionally ,Display a notification message  if the user is logged in
+Task:
+-Create a greeting component that accepts a prop for the user’s name
+-Use Conditional rendering to check if the user is logged in and display the appropriate message
+-Implement dynamic styles using inline styles based on the login status
+Question:
+How would you modify the existing react code to handle a scenario where the app needs to display a personalised greeting message based on whether the user is logged in and how would you conditionally apply different inline styles based on their login status
+Greeting.js
+import React from "react";
+
+const Greeting = ({ userName, isLoggedIn }) => {
+  const greetingMessage = isLoggedIn
+    ? `Welcome back, ${userName}!`
+    : "Please log in";
+
+  const notificationMessage = isLoggedIn
+    ? "You have new notifications!"
+    : "";
+
+  const greetingStyle = {
+    color: isLoggedIn ? "green" : "red",
+    fontSize: "20px",
+    fontWeight: "bold",
+    margin: "10px 0",
+  };
+
+  return (
+    <div>
+      <h2 style={greetingStyle}>{greetingMessage}</h2>
+      {isLoggedIn && <p style={{ color: "blue" }}>{notificationMessage}</p>}
+    </div>
+  );
+};
+
+export default Greeting;
+
+App.js
+import React, { useState } from "react";
+import Greeting from "./Greeting";
+
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const userName = "Amrutha"; // Example name
+
+  return (
+    <div>
+      <Greeting userName={userName} isLoggedIn={isLoggedIn} />
+      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+        {isLoggedIn ? "Log Out" : "Log In"}
+      </button>
+    </div>
+  );
+};
+
+export default App;
+
+Scenario 2: Resuable component for multiple cards
+Imagine you’r building a react application where you need to display several user profiles. Each profile contains a name,a greeting message,and an image.you want to create a reusable component for displaying these profiles,so you can easily create cards for each user by just passing different props.
+Task:
+-create a profileCard component that accepts props like name,greeting and imagesrc.
+-Display the profile card within the user’s name,greeting,and image.
+-use this profileCard components multiple times with different props for each users.
+Questions:
+How would you implement a reusable profilecaryd component that accepts dynamic props like name,greeting, and imagesrc and renders these dynamically for multiple users on the same page? Show an example of how to render the multiple profilecard components.
+Profile Card:
+import React from "react";
+
+const ProfileCard = ({ name, greeting, imageSrc }) => {
+  const cardStyle = {
+    border: "1px solid #ccc",
+    borderRadius: "10px",
+    padding: "15px",
+    textAlign: "center",
+    width: "250px",
+    boxShadow: "2px 2px 10px rgba(0,0,0,0.1)",
+    margin: "10px",
+  };
+
+  const imageStyle = {
+    width: "100px",
+    height: "100px",
+    borderRadius: "50%",
+    objectFit: "cover",
+    marginBottom: "10px",
+  };
+
+  return (
+    <div style={cardStyle}>
+      <img src={imageSrc} alt={name} style={imageStyle} />
+      <h2>{name}</h2>
+      <p>{greeting}</p>
+    </div>
+  );
+};
+
+export default ProfileCard;
+
+App.js
+import React from "react";
+import ProfileCard from "./Profilecard";
+
+const App = () => {
+  const users = [
+    {
+      name: "Amrutha",
+      greeting: "Hello, welcome back!",
+      imageSrc: "https://randomuser.me/api/portraits/women/2.jpg",
+    },
+    {
+      name: "Cherishma",
+      greeting: "Nice to meet you!",
+      imageSrc: "https://randomuser.me/api/portraits/women/2.jpg",
+    },
+    {
+      name: "Swathi",
+      greeting: "Hope you're having a great day!",
+      imageSrc: "https://randomuser.me/api/portraits/women/2.jpg",
+    },
+  ];
+
+  return (
+    <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+      {users.map((user, index) => (
+        <ProfileCard
+          key={index}
+          name={user.name}
+          greeting={user.greeting}
+          imageSrc={user.imageSrc}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default App;
