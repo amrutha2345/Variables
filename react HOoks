@@ -1,0 +1,76 @@
+React Hooks
+React Reducer():
+Cllback()
+React Reducer();
+A reducer is a function that helps to update(like score ,a list) based on action we take
+1)current State : The current value of a state
+2)Action :
+Example:
+Action : add or remove an item
+State: initial value (3 items) #3-apples
+--Tracking
+import React,{useReducer} from 'react';
+function appleReducer(state=3,action){
+  switch(action.type){
+    case 'ADD_APPLE':
+      return state+1;
+      
+      case 'EATAPPLE':
+      return state+1;
+
+
+      default:
+        return state;
+
+  }
+}
+function App(){
+  const[state,dispatch]=useReducer(appleReducer)
+    return(
+      <div>
+      <h1>Apple Counter</h1>
+      <p>Number of Apples</p>
+      <button onClick={()=>dispatch({type:'ADD_APPLE'})}>ADD APPLE</button>
+      <button onClick={()=>dispatch({type:'EAT_APPLE'})}>EAT APPLE</button>
+      </div>
+    )
+  }
+  export default App;
+
+
+Output:
+ 
+With Style:
+import React,{useReducer} from 'react';
+function appleReducer(state=3,action){
+  switch(action.type){
+    case 'ADD_APPLE':
+      return state+1;
+      case 'EATAPPLE':
+      return state+1;
+      default:
+        return state;
+
+  }
+}
+function App(){
+  const[state,dispatch]=useReducer(appleReducer)
+    return(
+      <div>
+      <h1>Apple Counter</h1>
+      <p>Number of Apples:{state}</p>
+      <button onClick= {()=>dispatch({type:'ADD_APPLE'})} style={{background:'ash',color:'black',textAlign:"center"}}>ADD APPLE</button>
+      <button onClick= {()=>dispatch({type:'EAT_APPLE'})} style={{background:'ash',color:'black',textAllign:"center"}}>EAT APPLE</button>
+      </div>
+    )
+  }
+  export default App;
+
+
+Callback in React :
+In react, a callback is function that is passed as an argument to another function
+call backs are often to communicate with different components
+Ex:
+A Parent component passing as Callback to a Child
+Parent component displays a message ; and child component has a button
+When  the button is clicked ,the child will use callback and tells the parent component to update
