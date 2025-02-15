@@ -1,0 +1,80 @@
+15th February 2025
+With image:
+import React, { useReducer } from 'react';
+import './App.css';
+
+function appleReducer(state = 3, action) {
+  switch (action.type) {
+    case 'ADD_APPLE':
+      return state + 1;
+    case 'EAT_APPLE':
+      return state > 0 ? state - 1 : 0;
+    default:
+      return state;
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(appleReducer, 3);
+
+  return (
+    <div style={{ textAlign: 'center', padding: '20px' }}>
+      <h1>Apple Counter</h1>
+      <p>NUMBER OF APPLES: {state}</p>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        {[...Array(state)].map((_, index) => (
+          <img 
+            key={index} 
+            src="https://images.pexels.com/photos/39803/pexels-photo-39803.jpeg?cs=srgb&dl=food-healthy-apple-39803.jpg&fm=jpg" 
+            alt="Apple" 
+            style={{ width: '50px', height: '50px' }} 
+          />
+        ))}
+      </div>
+      <br />
+      <button className='a' onClick={() => dispatch({ type: 'ADD_APPLE' })}>ADD APPLE</button>
+      <button className='b' onClick={() => dispatch({ type: 'EAT_APPLE' })} disabled={state === 0}>EAT APPLE</button>
+    </div>
+  );
+}
+
+export default App;
+
+Output:
+ 
+UseRef:
+useState:change the state ;React will render the component and update the UI with the new element
+useRef:Changing the value by using useRef doesnot re-render stays the same even the value is updated
+It doesnot make the component render
+This is usefull when you need to store values or interact with Dom elements without extra renders
+Commonly used:
+1)Accesing a Dom element like scrolling the screen
+Focusing the input
+2)storing values:Keep track of values that don’t need to update the UI but need to rememebered the previous state
+Ex:
+import React,{useState,useEffect,useRef} from "react";
+
+function CounterWithPrev(){
+  const [count,setCount] = useState(0);
+  const prevCountRef = useRef();
+
+  //create a ref to store the previous value 
+  useEffect(()=>{
+    prevCountRef.current=count;
+  },[count])
+
+  return(
+    <div>
+      <p>Current Count: {count}</p>
+      <p>prevCount: {prevCountRef.current}</p>
+
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+    </div>
+  )
+    
+}
+
+export default CounterWithPrev;
+Output:
+ 
+
