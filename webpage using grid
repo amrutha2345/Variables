@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>grid</title>
+    </head>
+    <style>
+        .parent{
+            text-align: center;
+            height:100vh;
+            display: grid;
+            grid-template-rows: 15% 70% 15%;
+            grid-template-columns: 15% 70% 15%;
+        }
+        .header{
+            background-color: black;
+        }
+        .aside{
+            background-color: black;
+        }
+        .main{
+            background-color: black;
+        }
+        .rightmenu{
+            background-color: black;
+        }
+        .footer{
+            background-color: gray;
+
+        }
+        .aside1{
+            background-color: black;
+        }
+        .aside2{
+            background-color: black;
+        }
+        .lowheader{
+            background-color: black;
+        }
+        .aside3{
+            background-color: black;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class ="parent">   
+        <div class="header">header</div>
+        <div class="aside">aside</div>
+        <div class="main">main</div> 
+        <div class="rightmenu">rightmenu</div>
+        <div class="footer">footer</div>
+        <div class="aside1"></div>
+        <div class="aside2"></div>
+        <div class="lowheader">header</div>
+        <div class="aside3"></div>
+</div>
+</body>
+</html>
